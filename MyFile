@@ -1,0 +1,52 @@
+//This is a typing test
+
+#include <iostream>
+#include <string>
+#include <ctime>
+#include <cmath>
+#include <cstdlib>
+#include <windows.h>
+
+using namespace std;
+
+int main()
+{
+	cout << "*WELCOME TO THE TYPING TEST!*\nYou will be given a phrase, and you will have to type it in, then press enter";
+	Sleep(5000);
+	system("cls");
+	
+	string tire;
+	cout << "Greetings fellow earthlings, I am am 14 plutonian years old";
+	cout << endl;
+	bool correct = false;
+	clock_t time_req;
+
+	time_req = clock();
+	while (correct == false) {
+		
+		cin >> tire;
+		if (tire == "Greetings fellow earthlings, I am am 14 plutonian years old") {
+			correct = true;
+			system("cls");
+		}
+		cout << "INCORRECT!, oh well, I'll just tell you how long that took";
+		correct = true;
+		system("cls");
+	}
+
+	time_req = clock() - time_req;
+	float number = (float)time_req / CLOCKS_PER_SEC;
+	cout << "Wow, it took you approximately " << (float)time_req / CLOCKS_PER_SEC << " seconds";
+	number = number / 10;
+	float wpm = 60 / number;
+	cout << "\n\n\nThat was " << wpm << " wpm\n\n\n";
+	if (wpm < 39) {
+		float d = 39 - wpm;
+		cout << "That was " << d << " wpm less than average\n\n\n";
+	}
+	else {
+		float a = wpm - 39;
+		cout << "That was " << a << " wpm above average\n\n\n";
+	}
+}
+
